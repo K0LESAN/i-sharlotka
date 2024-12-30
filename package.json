@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint --no-cache --fix",
     "format": "prettier . --write --ignore-unknown",
-    "stylelint": "stylelint . --allow-empty-input --fix",
+    "stylelint": "stylelint **/*.{css,scss} --allow-empty-input --fix",
+    "lint:all": "npm run stylelint && npm run lint && npm run format",
     "prepare": "husky"
   },
   "dependencies": {
