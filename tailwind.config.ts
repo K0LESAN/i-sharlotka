@@ -18,11 +18,11 @@ export default {
       colors: {
         lightborder: 'var(--lightborder)',
         gray: 'var(--gray)',
-        'gray-dark': 'var(--gray)',
-        'blue-dark': 'var(--blue)',
-        'blue-light': 'var(--blue)',
-        'gray-text': 'var(--gray)',
-        'gray-medium': 'var(--gray)',
+        'gray-dark': 'var(--gray-dark)',
+        'blue-dark': 'var(--blue-dark)',
+        'blue-light': 'var(--blue-light)',
+        'gray-text': 'var(--gray-text)',
+        'gray-medium': 'var(--gray-medium)',
         green: 'var(--green)',
         red: 'var(--red)',
         white: 'var(--white)'
