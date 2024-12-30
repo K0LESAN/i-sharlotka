@@ -1,0 +1,47 @@
+@use 'sass:math';
+@use 'sass:list';
+
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+$root-size: 16;
+
+@function rem($sizes...) {
+  $list-size: ();
+
+  @each $size in $sizes {
+    $list-size: list.append($list-size, #{math.div($size, $root-size)}rem);
+  }
+
+  @return $list-size;
+}
+
+@function percent($dividend, $divider) {
+  @return math.percentage(math.div($dividend, $divider));
+}
+
+@mixin font($size, $line-height) {
+  font-size: rem($size);
+  line-height: percent($size, $line-height);
+}
+
+:root {
+  --root-size: $root-size;
+  --lightborder: #edf0f5;
+  --gray: #8c98b7;
+  --gray-dark: #606675;
+  --blue-dark: #011a6c;
+  --blue-light: #3f89dc;
+  --gray-text: #424242;
+  --gray-medium: #c1c9db;
+  --green: #48d480;
+  --red: #e15959;
+  --white: #fefefe;
+}
+
+body {
+  @apply bg-white text-gray-dark font-gilroy;
+}
