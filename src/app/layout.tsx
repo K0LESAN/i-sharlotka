@@ -81,7 +81,7 @@ export async function generateMetadata() {
   });
 
   return {
-    title: 'iSharlotka',
+    title: t('title'),
     description: t('description')
   };
 }
