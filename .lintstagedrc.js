@@ -3,9 +3,8 @@ const path = require('path');
 
 const commands = {
   lint: 'next lint --no-cache --fix --file {{files}}',
-  prettier:
-    'prettier src/**/*.{js,jsx,ts,tsx} --write --ignore-unknown {{files}}',
-  stylelint: 'stylelint {{files}}} --allow-empty-input --fix'
+  prettier: 'prettier --write --ignore-unknown {{files}}',
+  stylelint: 'stylelint {{files}} --allow-empty-input --fix'
 };
 
 const buildCommand = (command) => {
