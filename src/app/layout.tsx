@@ -31,35 +31,35 @@ const raleway = Raleway({
 const gilroy = localFont({
   src: [
     {
-      path: './fonts/gilroy/gilroy-ultra-light.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-ultra-light.woff',
       weight: '200'
     },
     {
-      path: './fonts/gilroy/gilroy-light.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-light.woff',
       weight: '300'
     },
     {
-      path: './fonts/gilroy/gilroy-regular.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-regular.woff',
       weight: '400'
     },
     {
-      path: './fonts/gilroy/gilroy-medium.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-medium.woff',
       weight: '500'
     },
     {
-      path: './fonts/gilroy/gilroy-semi-bold.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-semi-bold.woff',
       weight: '600'
     },
     {
-      path: './fonts/gilroy/gilroy-bold.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-bold.woff',
       weight: '700'
     },
     {
-      path: './fonts/gilroy/gilroy-extra-bold.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-extra-bold.woff',
       weight: '800'
     },
     {
-      path: './fonts/gilroy/gilroy-heavy.woff',
+      path: '../shared/assets/fonts/gilroy/gilroy-heavy.woff',
       weight: '900'
     }
   ],
@@ -67,7 +67,7 @@ const gilroy = localFont({
   fallback: ['sans-serif']
 });
 const akrobat = localFont({
-  src: './fonts/akrobat/akrobat-regular.woff',
+  src: '../shared/assets/fonts/akrobat/akrobat-regular.woff',
   weight: '400',
   variable: '--akrobat',
   fallback: ['sans-serif']
