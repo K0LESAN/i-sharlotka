@@ -1,0 +1,64 @@
+.header {
+  @apply flex items-center justify-between;
+
+  &__main {
+    @apply flex items-center;
+  }
+
+  &__logo {
+    @apply mr-7;
+  }
+
+  &__inner {
+    @apply flex items-center w-52 mr-9 px-4 py-3 border-lightborder border rounded cursor-pointer;
+  }
+
+  &__search {
+    @apply mr-5 w-full outline-none;
+    @extend %gray-link;
+
+    &::placeholder {
+      @extend %gray-link;
+    }
+  }
+
+  &__loop {
+  }
+
+  &__links {
+    @apply flex items-center gap-6;
+  }
+
+  &__link {
+    @extend %gray-link;
+  }
+
+  &__wrapper {
+    @apply flex items-center;
+  }
+
+  &__shop {
+    @apply flex items-center gap-5 mr-7;
+  }
+
+  &__cart {
+  }
+
+  &__favorite {
+  }
+
+  &__user {
+    @apply flex items-center gap-2;
+  }
+
+  &__profile {
+  }
+
+  &__login {
+    @apply relative;
+
+    &::before {
+      @apply absolute block bottom-0 w-full h-px bg-gray content-[""];
+    }
+  }
+}

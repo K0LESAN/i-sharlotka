@@ -2,5 +2,14 @@
   "metadata": {
     "title": "iШарлотка",
     "description": "Делаем индивидуальные аксессуары на смартфоны"
+  },
+  "header": {
+    "searchByProduct": "Поиск по товарам...",
+    "orderStatus": "Узнать статус заказа",
+    "aboutUs": "О нас",
+    "login": "Войти",
+    "cart": "Корзина",
+    "favorites": "Избранное",
+    "profile": "Профиль"
   }
 }

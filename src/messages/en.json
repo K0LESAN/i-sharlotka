@@ -1,6 +1,15 @@
 {
   "metadata": {
     "title": "iSharlotka",
-    "description": "We make accessories for smartphones"
+    "description": "We make custom accessories for smartphones"
+  },
+  "header": {
+    "searchByProduct": "Search by product...",
+    "orderStatus": "Find out the order status",
+    "aboutUs": "About us",
+    "login": "Login",
+    "cart": "Cart",
+    "favorites": "Favorites",
+    "profile": "Profile"
   }
 }
