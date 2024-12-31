@@ -1,7 +1,11 @@
-import createNextIntlPlugin from 'next-intl/plugin';
 import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  sassOptions: {
+    prependData: `@use "./src/shared/assets/styles/core.scss";`
+  }
+};
 
 const withNextIntl = createNextIntlPlugin();
 

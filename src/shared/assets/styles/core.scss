@@ -1,0 +1,27 @@
+@use 'sass:math';
+@use 'sass:list';
+
+$root-size: 16;
+
+@function to-rem($sizes...) {
+  $list-size: ();
+
+  @each $size in $sizes {
+    $list-size: list.append($list-size, #{math.div($size, $root-size)}rem);
+  }
+
+  @return $list-size;
+}
+
+@function percent($dividend, $divider) {
+  @return math.percentage(math.div($dividend, $divider));
+}
+
+@mixin font($size, $line-height) {
+  font-size: to-rem($size);
+  line-height: percent($size, $line-height);
+}
+
+%gray-link {
+  @apply text-sm text-gray font-semibold;
+}

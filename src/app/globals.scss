@@ -1,6 +1,3 @@
-@use 'sass:math';
-@use 'sass:list';
-
 /* stylelint-disable */
 @tailwind base;
 @tailwind components;
@@ -9,23 +6,8 @@
 
 $root-size: 16;
 
-@function rem($sizes...) {
-  $list-size: ();
-
-  @each $size in $sizes {
-    $list-size: list.append($list-size, #{math.div($size, $root-size)}rem);
-  }
-
-  @return $list-size;
-}
-
-@function percent($dividend, $divider) {
-  @return math.percentage(math.div($dividend, $divider));
-}
-
-@mixin font($size, $line-height) {
-  font-size: rem($size);
-  line-height: percent($size, $line-height);
+body {
+  @apply bg-white text-gray-dark font-gilroy;
 }
 
 :root {
@@ -40,8 +22,4 @@ $root-size: 16;
   --green: #48d480;
   --red: #e15959;
   --white: #fefefe;
-}
-
-body {
-  @apply bg-white text-gray-dark font-gilroy;
 }
