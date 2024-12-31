@@ -1,11 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import logoSrc from '@/shared/assets/icons/logo.svg';
 import searchSrc from '@/shared/assets/icons/search.svg';
 import shoppingCartSrc from '@/shared/assets/icons/shopping-cart.svg';
 import heartSrc from '@/shared/assets/icons/heart.svg';
 import userSrc from '@/shared/assets/icons/user.svg';
-import { Link } from '@/i18n/routing';
 import styles from './index.module.scss';
 
 export default async function Header() {

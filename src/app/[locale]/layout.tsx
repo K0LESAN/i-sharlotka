@@ -1,8 +1,8 @@
+import { notFound } from 'next/navigation';
 import { type Locales, locales } from '@/shared/constants';
 import { checkLocale } from '@/shared/utils';
 import Container from '@/widgets/container';
 import Header from '@/widgets/header';
-import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
   return locales.map((locale: Locales): { locale: Locales } => ({
@@ -10,7 +10,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function RootLayout({
+export default async function HomeLayout({
   children,
   params
 }: Readonly<{

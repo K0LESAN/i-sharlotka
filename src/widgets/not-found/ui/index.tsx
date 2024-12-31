@@ -1,5 +1,5 @@
-import { Link } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/routing';
 import styles from './index.module.scss';
 
 export default async function NotFound() {
