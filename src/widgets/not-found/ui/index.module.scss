@@ -1,0 +1,18 @@
+.wrapper {
+  @apply w-screen h-screen flex items-center justify-center;
+}
+
+.inner {
+  @apply text-center;
+}
+
+.title {
+  @apply text-3xl;
+}
+
+.description {
+}
+
+.home {
+  @extend %gray-link;
+}
