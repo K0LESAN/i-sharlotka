@@ -1,5 +1,7 @@
 import { type Locales, locales } from '@/shared/constants';
 import { checkLocale } from '@/shared/utils';
+import Container from '@/widgets/container';
+import Header from '@/widgets/header';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
@@ -21,5 +23,12 @@ export default async function RootLayout({
     notFound();
   }
 
-  return children;
+  return (
+    <>
+      <Container>
+        <Header />
+      </Container>
+      {children}
+    </>
+  );
 }
