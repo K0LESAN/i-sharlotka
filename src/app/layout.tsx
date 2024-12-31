@@ -1,6 +1,7 @@
+import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 import { Open_Sans, Montserrat, Roboto, Raleway } from 'next/font/google';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import localFont from 'next/font/local';
-import type { Metadata } from 'next';
 import './globals.scss';
 
 const openSans = Open_Sans({
@@ -30,96 +31,32 @@ const raleway = Raleway({
 const gilroy = localFont({
   src: [
     {
-      path: './fonts/gilroy/gilroy-ultra-light.eot',
-      weight: '200'
-    },
-    {
-      path: './fonts/gilroy/gilroy-ultra-light.ttf',
-      weight: '200'
-    },
-    {
       path: './fonts/gilroy/gilroy-ultra-light.woff',
       weight: '200'
-    },
-    {
-      path: './fonts/gilroy/gilroy-light.eot',
-      weight: '300'
-    },
-    {
-      path: './fonts/gilroy/gilroy-light.ttf',
-      weight: '300'
     },
     {
       path: './fonts/gilroy/gilroy-light.woff',
       weight: '300'
     },
     {
-      path: './fonts/gilroy/gilroy-regular.eot',
-      weight: '400'
-    },
-    {
-      path: './fonts/gilroy/gilroy-regular.ttf',
-      weight: '400'
-    },
-    {
       path: './fonts/gilroy/gilroy-regular.woff',
       weight: '400'
-    },
-    {
-      path: './fonts/gilroy/gilroy-medium.eot',
-      weight: '500'
-    },
-    {
-      path: './fonts/gilroy/gilroy-medium.ttf',
-      weight: '500'
     },
     {
       path: './fonts/gilroy/gilroy-medium.woff',
       weight: '500'
     },
     {
-      path: './fonts/gilroy/gilroy-semi-bold.eot',
-      weight: '600'
-    },
-    {
-      path: './fonts/gilroy/gilroy-semi-bold.ttf',
-      weight: '600'
-    },
-    {
       path: './fonts/gilroy/gilroy-semi-bold.woff',
       weight: '600'
-    },
-    {
-      path: './fonts/gilroy/gilroy-bold.eot',
-      weight: '700'
-    },
-    {
-      path: './fonts/gilroy/gilroy-bold.ttf',
-      weight: '700'
     },
     {
       path: './fonts/gilroy/gilroy-bold.woff',
       weight: '700'
     },
     {
-      path: './fonts/gilroy/gilroy-extra-bold.eot',
-      weight: '800'
-    },
-    {
-      path: './fonts/gilroy/gilroy-extra-bold.ttf',
-      weight: '800'
-    },
-    {
       path: './fonts/gilroy/gilroy-extra-bold.woff',
       weight: '800'
-    },
-    {
-      path: './fonts/gilroy/gilroy-heavy.eot',
-      weight: '900'
-    },
-    {
-      path: './fonts/gilroy/gilroy-heavy.ttf',
-      weight: '900'
     },
     {
       path: './fonts/gilroy/gilroy-heavy.woff',
@@ -130,43 +67,43 @@ const gilroy = localFont({
   fallback: ['sans-serif']
 });
 const akrobat = localFont({
-  src: [
-    {
-      path: './fonts/akrobat/akrobat-regular.eot',
-      weight: '400'
-    },
-    {
-      path: './fonts/akrobat/akrobat-regular.otf',
-      weight: '400'
-    },
-    {
-      path: './fonts/akrobat/akrobat-regular.ttf',
-      weight: '400'
-    },
-    {
-      path: './fonts/akrobat/akrobat-regular.woff',
-      weight: '400'
-    }
-  ],
+  src: './fonts/akrobat/akrobat-regular.woff',
+  weight: '400',
   variable: '--akrobat',
   fallback: ['sans-serif']
 });
 
-export const metadata: Metadata = {
-  title: 'iSharlotka',
-  description: 'Делаем индивидуальные аксессуары на смартфоны'
-};
+export async function generateMetadata() {
+  const locale: string = await getLocale();
+  const t = await getTranslations({
+    locale,
+    namespace: 'metadata'
+  });
 
-export default function RootLayout({
+  return {
+    title: 'iSharlotka',
+    description: t('description')
+  };
+}
+
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale: string = await getLocale();
+  const messages: AbstractIntlMessages = await getMessages({
+    locale
+  });
+
   return (
-    <html lang='ru'>
+    <html lang={locale}>
       <body
-        className={`${openSans.variable} ${montserrat.variable} ${raleway.variable} ${roboto.variable} ${gilroy.variable} ${akrobat.variable}`}>
-        {children}
+        className={`${openSans.variable} ${montserrat.variable} ${raleway.variable} ${roboto.variable} ${gilroy.variable} ${akrobat.variable}`}
+      >
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
