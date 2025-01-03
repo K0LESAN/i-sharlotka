@@ -1,11 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import logoSrc from '@/shared/assets/icons/logo.svg';
-import searchSrc from '@/shared/assets/icons/search.svg';
-import shoppingCartSrc from '@/shared/assets/icons/shopping-cart.svg';
-import heartSrc from '@/shared/assets/icons/heart.svg';
-import userSrc from '@/shared/assets/icons/user.svg';
+import logoIcon from '@/shared/assets/icons/logo.svg';
+import searchIcon from '@/shared/assets/icons/search.svg';
+import shoppingCartIcon from '@/shared/assets/icons/shopping-cart.svg';
+import heartIcon from '@/shared/assets/icons/heart.svg';
+import userIcon from '@/shared/assets/icons/user.svg';
 import styles from './index.module.scss';
 
 export default async function Header() {
@@ -17,7 +17,7 @@ export default async function Header() {
       <div className={styles.header__main}>
         <Link href='/' className={styles.header__logo}>
           <Image
-            src={logoSrc}
+            src={logoIcon}
             priority
             alt={`${metadata('title')} | ${metadata('description')}`}
           />
@@ -29,7 +29,7 @@ export default async function Header() {
             type='text'
             placeholder={t('searchByProduct')}
           />
-          <Image className={styles.header__loop} src={searchSrc} alt='' />
+          <Image className={styles.header__loop} src={searchIcon} alt='' />
         </label>
         <div className={styles.header__links}>
           <Link className={styles.header__link} href='/order'>
@@ -43,15 +43,15 @@ export default async function Header() {
       <div className={styles.header__wrapper}>
         <div className={styles.header__shop}>
           <Link className={styles.header__cart} href='/cart'>
-            <Image src={shoppingCartSrc} alt={t('cart')} />
+            <Image src={shoppingCartIcon} alt={t('cart')} />
           </Link>
           <Link className={styles.header__favorite} href='/favorites'>
-            <Image src={heartSrc} alt={t('favorites')} />
+            <Image src={heartIcon} alt={t('favorites')} />
           </Link>
         </div>
         <div className={styles.header__user}>
           <Link className={styles.header__profile} href='/profile'>
-            <Image src={userSrc} alt={t('profile')} />
+            <Image src={userIcon} alt={t('profile')} />
           </Link>
           <Link className={styles.header__login} href='/login'>
             {t('login')}
