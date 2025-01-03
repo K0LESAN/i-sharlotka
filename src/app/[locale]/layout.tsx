@@ -3,6 +3,7 @@ import { type Locales, locales } from '@/shared/constants';
 import { checkLocale } from '@/shared/utils';
 import Container from '@/widgets/container';
 import Header from '@/widgets/header';
+import { ParamsWithLocale } from '@/types/localization';
 
 export function generateStaticParams() {
   return locales.map((locale: Locales): { locale: Locales } => ({
@@ -13,10 +14,7 @@ export function generateStaticParams() {
 export default async function HomeLayout({
   children,
   params
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}>) {
+}: ParamsWithLocale & { children: React.ReactNode }) {
   const { locale }: { locale: string } = await params;
 
   if (!checkLocale(locale)) {
@@ -28,7 +26,7 @@ export default async function HomeLayout({
       <Container>
         <Header />
       </Container>
-      {children}
+      <main>{children}</main>
     </>
   );
 }
