@@ -16,5 +16,22 @@
     "title": "Error 404",
     "description": "Could not find requested resource",
     "home": "Return Home"
+  },
+  "hero": {
+    "title": {
+      "create": "Create",
+      "individual": "a custom",
+      "design": "design",
+      "for": "for your",
+      "case": "case"
+    },
+    "button": "Create your own case",
+    "down": "Or choose a ready-made template",
+    "special": "Special offer",
+    "delivery": {
+      "free": "Free delivery",
+      "order": "when ordering"
+    },
+    "from": "from"
   }
 }

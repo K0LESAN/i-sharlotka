@@ -18,6 +18,7 @@ export default {
       colors: {
         lightborder: 'var(--lightborder)',
         gray: 'var(--gray)',
+        'orange-dark': 'var(--orange-dark)',
         'gray-dark': 'var(--gray-dark)',
         'blue-dark': 'var(--blue-dark)',
         'blue-light': 'var(--blue-light)',
@@ -25,7 +26,8 @@ export default {
         'gray-medium': 'var(--gray-medium)',
         green: 'var(--green)',
         red: 'var(--red)',
-        white: 'var(--white)'
+        white: 'var(--white)',
+        cultured: 'var(--cultured)'
       }
     }
   },

@@ -1,0 +1,105 @@
+.wrapper {
+  @apply flex justify-between mb-16;
+}
+
+.main {
+  @apply flex flex-col justify-between w-[33.3125rem];
+}
+
+.title {
+  @apply flex gap-x-2 gap-y-3 flex-wrap mb-8;
+
+  &__part {
+    @apply text-gray text-[2.625rem] leading-none font-light;
+
+    &_bold {
+      @apply text-blue-dark font-extrabold;
+    }
+  }
+}
+
+.creator {
+  @apply relative mb-16 w-[19.125rem] h-[3.625rem] pl-8 bg-orange-dark flex items-center rounded-3xl;
+
+  &__text {
+    @apply text-white text-lg font-bold;
+  }
+
+  &__iphone {
+    @apply absolute bottom-0 right-2;
+  }
+}
+
+.choose {
+  @apply flex gap-4 items-center;
+
+  &__text {
+    @apply text-gray text-lg;
+  }
+
+  &__wrapper {
+    @apply flex flex-col gap-2 items-center;
+  }
+
+  &__triangle {
+  }
+}
+
+.special {
+  @apply overflow-hidden relative w-[27.1875rem] h-80 bg-cultured rounded-lg pt-8 pl-10 pb-9 pr-8;
+
+  &__background {
+    @apply absolute right-0 bottom-0 pointer-events-none;
+  }
+}
+
+.subtitle {
+  @apply mb-1 text-base font-semibold text-gray;
+}
+
+.line {
+  @apply w-[4.875rem] mb-7 h-px bg-gray;
+}
+
+.description {
+  @apply flex flex-col gap-y-1 mb-7;
+
+  &__part {
+    @apply text-xl text-blue-dark font-light;
+
+    &_bold {
+      @apply text-2xl font-bold;
+    }
+  }
+}
+
+.offer {
+  &__content {
+  }
+
+  &__from,
+  &__price {
+    @apply text-gray-text;
+  }
+
+  &__from {
+    @apply mr-3 text-base;
+  }
+
+  &__price {
+    @apply text-4xl font-extralight;
+  }
+
+  &__wrapper {
+  }
+
+  &__image {
+  }
+}
+
+.socials {
+  @apply flex flex-col gap-10;
+}
+
+.social {
+}
