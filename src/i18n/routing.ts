@@ -4,7 +4,13 @@ import { locales, defaultLocale } from '@/shared/constants';
 
 export const routing = defineRouting({
   locales,
-  defaultLocale
+  defaultLocale,
+  localeCookie: {
+    name: 'locale',
+    secure: true
+  },
+  localeDetection: true,
+  localePrefix: 'always'
 });
 
 export const {
