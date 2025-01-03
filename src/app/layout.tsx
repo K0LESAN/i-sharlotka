@@ -1,7 +1,9 @@
 import { type AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 import { Open_Sans, Montserrat, Roboto, Raleway } from 'next/font/google';
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import { getLangDir } from 'rtl-detect';
 import localFont from 'next/font/local';
+import { env } from '@/shared/constants';
 import './globals.scss';
 
 const openSans = Open_Sans({
@@ -82,7 +84,14 @@ export async function generateMetadata() {
 
   return {
     title: t('title'),
-    description: t('description')
+    description: t('description'),
+    metadataBase: new URL(env.BASE_URL),
+    alternates: {
+      canonical: '/',
+      languages: {
+        locale: `/${locale}`
+      }
+    }
   };
 }
 
@@ -95,13 +104,14 @@ export default async function RootLayout({
   const messages: AbstractIntlMessages = await getMessages({
     locale
   });
+  const direction = getLangDir(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={direction}>
       <body
         className={`${openSans.variable} ${montserrat.variable} ${raleway.variable} ${roboto.variable} ${gilroy.variable} ${akrobat.variable}`}
       >
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
       </body>
